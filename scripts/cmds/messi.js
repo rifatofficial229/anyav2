@@ -1,19 +1,19 @@
 module.exports = {
-  config: {
-    name: "messi",
-    aliases: ["lm10"],
-    version: "1.0",
-    author: "Otineyyyy your dadddy👾😉",
-    countDown: 5,
-    role: 0,
-    shortDescription: "send you pic of messi",
-    longDescription: "",
-    category: "football",
-    guide: "{pn}"
-  },
+	config: {
+		name: "messi",
+		aliases: ["lm10"],
+		version: "1.0",
+		author: "Otineyyyy your dadddy👾😉",
+		countDown: 5,
+		role: 0,
+		shortDescription: "send you pic of messi",
+		longDescription: "",
+		category: "football",
+		guide: "{pn}"
+	},
 
-  onStart: async function ({ message }) {
-   var link = [ "https://i.imgur.com/ahKcoO3.jpg",
+	onStart: async function ({ message }) {
+	 var link = [ "https://i.imgur.com/ahKcoO3.jpg",
 
 "https://i.imgur.com/Vsf4rM3.jpg",
 
@@ -51,7 +51,7 @@ module.exports = {
 "https://i.imgur.com/itscmiy.jpg",
 
 "https://i.imgur.com/FsnCelU.jpg",
-
+ 
 "https://i.imgur.com/c7BCwDF.jpg",
 
 "https://i.imgur.com/3cnR6xh.jpg",

@@ -1,44 +1,46 @@
-const DIG = require("discord-image-generation");
-const fs = require("fs-extra");
+const axios = require('axios');
+const jimp = require("jimp");
+const fs = require("fs")
 
 module.exports = {
-  config: {
-    name: "buttslap",
-    version: "1.1",
-    author: "KSHITIZ",
-    countDown: 5,
-    role: 0,
-    shortDescription: "Buttslap image",
-    longDescription: "Buttslap image",
-    category: "meme",
-    guide: {
-      en: "   {pn} @tag"
-    }
-  },
-
-  langs: {
-    vi: {
-      noTag: ""
+    config: {
+        name: "buttslap",
+        aliases: ["buttslap"],
+        version: "1.0",
+        author: "Taseen",
+        countDown: 5,
+        role: 0,
+        shortDescription: "buttslap someone",
+        longDescription: "",
+        category: "Entertainment",
+        guide: "{pn}"
     },
-    en: {
-      noTag: "You must tag the person you want to slap"
-    }
-  },
 
-  onStart: async function ({ event, message, usersData, args, getLang }) {
-    const uid1 = event.senderID;
-    const uid2 = Object.keys(event.mentions)[0];
-    if (!uid2)
-      return message.reply(getLang("noTag"));
-    const avatarURL1 = await usersData.getAvatarUrl(uid1);
-    const avatarURL2 = await usersData.getAvatarUrl(uid2);
-    const img = await new DIG.Spank().getImage(avatarURL1, avatarURL2);
-    const pathSave = `${__dirname}/tmp/${uid1}_${uid2}spank.png`;
-    fs.writeFileSync(pathSave, Buffer.from(img));
-    const content = args.join(' ').replace(Object.keys(event.mentions)[0], "");
-    message.reply({
-      body: `${(content || "hehe boii")}`,
-      attachment: fs.createReadStream(pathSave)
-    }, () => fs.unlinkSync(pathSave));
-  }
+
+
+    onStart: async function ({ message, event, args }) {
+        const mention = Object.keys(event.mentions);
+        if (mention.length == 0) return message.reply("Please mention someone");
+        else {
+            const one = event.senderID, two = mention[0];
+            bal(one, two).then(ptth => { message.reply({ body: "👋😹 move your butt", attachment: fs.createReadStream(ptth) }) })
+        }
+    }
+
+
 };
+
+async function bal(one, two) {
+
+    let avone = await jimp.read(`https://graph.facebook.com/${one}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`)
+    avone.circle()
+    let avtwo = await jimp.read(`https://graph.facebook.com/${two}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`)
+    avtwo.circle()
+    let pth = "butt.png"
+    let img = await jimp.read("https://api.misfitsdev.xyz/anime/buttslap.jpeg")
+
+    img.resize(720, 405).composite(avone.resize(90, 90), 368, 34).composite(avtwo.resize(90, 90), 190, 225);
+
+    await img.writeAsync(pth)
+    return pth
+}

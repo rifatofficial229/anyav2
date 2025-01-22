@@ -6,12 +6,12 @@ module.exports = {
         aliases: ["uptime", "up"],
         version: "1.0",
         author: "Tas33n",
-        countDown: 10,
+        countDown: 5,
         role: 0,
         description: {
             en: "Bot Uptime & system statics"
         },
-        category: "General",
+        category: "info",
         guide: {
             en: "{pn} sys"
         }

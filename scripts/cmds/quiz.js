@@ -6,7 +6,7 @@ read line 242 to 278 if u want to  add your own question using json
 
 go to line 333 and 429 to change reward
 
-read line 391111111111111111111111111111112000 if you want to customize correct or wrong answers output
+read line 3964646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464640 if you want to customize correct or wrong answers output
 
 don't change credit please i know making this code is not hard as you think, but adding question is really a struggle 
 
@@ -21,8 +21,8 @@ module.exports = {
     name: "quiz",
     aliases: [],
     version: "2.0",
-    author: "Jun",
-    countDown: 2,
+    author: "Jun",//Shared By Loid Butter
+    countDown: 10,
     role: 0,
     shortDescription: {
       vi: "",
@@ -92,7 +92,7 @@ const credit = "fuсkyа";
   }
   }        
 
-
+         
   if (args[0].toLowerCase() === "leaderboard") {
   try {
     const currentDate = new Date().toLocaleDateString('en-US', { timeZone: 'Asia/Manila' });
@@ -120,11 +120,11 @@ const credit = "fuсkyа";
 
     for (let i = startIndex; i < endIndex && i < playerData.length; i++) {
 
-
+      
          const player = playerData[i];
       const userData = await usersData.get(player.playerid);
       const playerName = userData.name;
-
+      
       //this is supposed to mention player in leaderboard ☹ but got no time to fix it..
       const arraytag = [
         { id: player.playerid, tag: playerName },
@@ -135,7 +135,7 @@ const credit = "fuсkyа";
         mentions: arraytag
       };
 
-
+      
       leaderboardMessage += `│Rank #${i + 1}\n│「${msg.body}」\n`;
       leaderboardMessage += `│Correct Answers: ${player.correct}\n`;
       leaderboardMessage += `│Wrong Answers: ${player.wrong}\n`;
@@ -152,7 +152,7 @@ const credit = "fuсkyа";
     return;
   }
 }
-
+        
   //for true or false questions          
     if (args[0].toLowerCase() === "torf") {
       try {
@@ -197,7 +197,8 @@ const txt = "please reply your answer with this character's name\n==============
         global.GoatBot.onReply.set(info.messageID, {
           commandName,
           messageID: info.messageID,
-          author: event.senderID, answer: Qdata.answer
+          author: event.senderID,
+          answer: Qdata.answer
         });
         setTimeout(() => {
           message.unsend(info.messageID);
@@ -240,7 +241,7 @@ const txt = "Guess this country's name\n======================\n\n"
     }
   } else/*if */ 
       /* modify the code if you don't want to use apis question
-
+  
    const category = args[0] ? args[0].toLowerCase() : '';
   const fs = require('fs');
 
@@ -296,7 +297,8 @@ try {
         message.reply({ body: `${getLang('reply')}\n\n${text}\n\n${choices}` }, (err, info) => {
           global.GoatBot.onReply.set(info.messageID, {
             commandName,
-            messageID: info.messageID,author: event.senderID,
+            messageID: info.messageID,
+            author: event.senderID,
             answer: Qdata.answer,
             answered: false,
             category,
@@ -316,7 +318,7 @@ try {
 }
 },
 
-
+  
   onReply: async function ({ message, Reply, event, api, usersData, envCommands, commandName }) {
     const { author, messageID, answer, answered, category } = Reply;
 
@@ -358,7 +360,7 @@ const playerid = event.senderID;
     const response = await axios.get('https://api-test.yourboss12.repl.co/correct');
     const imCreditChanger = response.data;
 
-
+      
       const rd = Math.floor(Math.random() * imCreditChanger.length);
       const ran = imCreditChanger[rd];
 
@@ -395,10 +397,11 @@ const imProChangingAuthor = JSON.parse(fs.readFileSync('correct.js', 'utf-8'));
 then the correct.json will be like this
 [
 "congrats bro {name}, noise answer here's your reward ${reward}"
-//add more]
+//add more
+]
 
 */
-
+ 
 const response = await axios.get('https://api-test.yourboss12.repl.co/wrong');
     const creditt = response.data;
 
@@ -422,14 +425,14 @@ const junn = Math.floor(Math.random() * creditt.length);
 
     const userData = await usersData.get(event.userID);
 
-
+   
   const reward = 10000;  /*
     const rewards = ["10000", "20000", "15000", "25000"];
 const rw = Math.floor(Math.random() * rewards.length);
 const reward = rewards[rw];
 */
-
-
+    
+    
     const id = event.userID;
     const name = (await usersData.get(id)).name;
     const arraytag = [
@@ -492,11 +495,10 @@ const junn = Math.floor(Math.random() * creditt.length);
 
       api.sendMessage(msg2, event.threadID, event.messageID);
     };
-
+  
 Reaction.fvckoff = true;
   }
 };
 function formatText(text) {
   return text.normalize("NFD").toLowerCase();
-}
-
+    }

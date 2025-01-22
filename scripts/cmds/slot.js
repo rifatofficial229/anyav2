@@ -2,23 +2,23 @@ module.exports = {
   config: {
     name: "slot",
     version: "1.0",
-    author: "OtinXSandip",
+    author: "Rifat",
     shortDescription: {
-      en: "Slot game",
+      en: "Game slot",
     },
     longDescription: {
-      en: "Slot game.",
+      en: "Game slot.",
     },
-    category: "Game",
+    category: "game",
   },
   langs: {
     en: {
-      invalid_amount: "Enter a valid and positive amount to have a chance to win double",
-      not_enough_money: "Check your balance if you have that amount",
-      spin_message: "Spinning...",
-      win_message: "You won $%1, buddy!",
-      lose_message: "You lost $%1, buddy.",
-      jackpot_message: "Jackpot! You won $%1 with three %2 symbols, buddy!",
+      invalid_amount: "Put a big 🌝 number, you can win twice the risk of my son 🌝🙌",
+      not_enough_money: "You have this amount, see your balance then 🌝🤣",
+      spin_message: "continued Rotation 🌝",
+      win_message:"You win %1$💗!",
+      lose_message: "You lost %1$🥲.",
+      jackpot_message: "This is the amount that Diem won! tripartite %1 $!",
     },
   },
   onStart: async function ({ args, message, event, envCommands, usersData, commandName, getLang }) {
@@ -34,7 +34,7 @@ module.exports = {
       return message.reply(getLang("not_enough_money"));
     }
 
-    const slots = ["💚", "💛", "💙", "💛", "💚", "💙", "💙", "💛", "💚"];
+    const slots = ["🍒", "🍇", "🍊", "🍉", "🍋", "🍎", "🍓", "🍑", "🥝"];
     const slot1 = slots[Math.floor(Math.random() * slots.length)];
     const slot2 = slots[Math.floor(Math.random() * slots.length)];
     const slot3 = slots[Math.floor(Math.random() * slots.length)];
@@ -53,9 +53,9 @@ module.exports = {
 };
 
 function calculateWinnings(slot1, slot2, slot3, betAmount) {
-  if (slot1 === "💚" && slot2 === "💚" && slot3 === "💚") {
+  if (slot1 === "🍒" && slot2 === "🍒" && slot3 === "🍒") {
     return betAmount * 10;
-  } else if (slot1 === "💛" && slot2 === "💛" && slot3 === "💛") {
+  } else if (slot1 === "🍇" && slot2 === "🍇" && slot3 === "🍇") {
     return betAmount * 5;
   } else if (slot1 === slot2 && slot2 === slot3) {
     return betAmount * 3;
@@ -68,12 +68,12 @@ function calculateWinnings(slot1, slot2, slot3, betAmount) {
 
 function getSpinResultMessage(slot1, slot2, slot3, winnings, getLang) {
   if (winnings > 0) {
-    if (slot1 === "💙" && slot2 === "💙" && slot3 === "💙") {
-      return getLang("jackpot_message", winnings, "💙");
+    if (slot1 === "🍒" && slot2 === "🍒" && slot3 === "🍒") {
+      return getLang("jackpot_message", winnings);
     } else {
-      return getLang("win_message", winnings) + `\[ ${slot1} | ${slot2} | ${slot3} ]`;
+      return getLang("win_message", winnings) + `\n[ ${slot1} | ${slot2} | ${slot3} ]`;
     }
   } else {
-    return getLang("lose_message", -winnings) + `\[ ${slot1} | ${slot2} | ${slot3} ]`;
+    return getLang("lose_message", -winnings) + `\n[ ${slot1} | ${slot2} | ${slot3} ]`;
   }
-        }
+}

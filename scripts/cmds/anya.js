@@ -30,8 +30,8 @@ module.exports = {
 			error: 'Simsimi đang bận, bạn hãy thử lại sau'
 		},
 		en: {
-			turnedOn: '✅ | Turned on Anya successfully!',
-			turnedOff: '✅ | Turned off Anya successfully!',
+			turnedOn: 'Turned on Anya successfully!',
+			turnedOff: 'Turned off Anya successfully!',
 			chatting: 'Already Chatting with hina...',
 			error: 'What?🙂'
 		}
@@ -82,4 +82,4 @@ async function getMessage(yourMessage, langCode) {
 		throw new Error(res.data.success);
 
 	return res.data.message;
-}
+        }

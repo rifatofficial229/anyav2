@@ -1,67 +1,39 @@
 module.exports = {
-  config: {
-    name: "choose",
-    aliases: ["rand"],
-    version: "1.0",
-    author: "Riley",
-    countDown: 0,
-    role: 0,
-    shortDescription: "Choose one option from a list",
-    longDescription: "Choose one option from a list",
-    category: "fun",
-    guide: {
-      en: "{pn} option1, option2, option3 - Choose one option",
-    },
-  },
-
-  onStart: function ({ args, api, event }) {
-    if (args.length < 1) {
-      api.sendMessage("Usage: !choose option1, option2, option3", event.threadID);
-      return;
+	config: {
+		name: "choose",
+		version: "1.0",
+		author: "Løü Fï",
+		countDown: 5,
+		role: 0,
+		shortDescription: {
+			vi: "",
+			en: "the bot chooses"
+		},
+		longDescription: {
+			vi: "",
+			en: "it helps you choose"
+		},
+		category: "games",
+		guide: {
+			vi: "",
+			en: "choose | Loid"
+		}
+	},
+  
+ langs: {
+		vi: {
+			hello: ""
+		},
+		en: {
+			many: "at least two options"
+		}
+	},
+  
+ onStart: async function ({ message, args, getLang })  { 
+     const options = args.join(" ").split("|"); 
+     if (options.length < 2) return message.reply(getLang("many")); 
+  
+     const index = options[Math.floor(Math.random()*options.length)]; 
+     message.reply(`⇒ ${options[index]?.trim() || "┐(￣ヘ￣)┌"}`); 
+   }
     }
-    const options = args.join(" ").includes("|") ? args.join(" ").split("|") : args.join(" ").split(",");
-    const fancyOptions = options.map((option) => toFancyText(option.trim()));
-
-    const randomIndex = Math.floor(Math.random() * fancyOptions.length);
-    const chosenOption = fancyOptions[randomIndex];
-
-    api.sendMessage(`${chosenOption} is the best choice!`, event.threadID, event.messageID);
-  },
-};
-
-function toFancyText(text) {
-  const fancyMap = {
-    a: '𝗔',
-    b: '𝗕',
-    c: '𝗖',
-    d: '𝗗',
-    e: '𝗘',
-    f: '𝗙',
-    g: '𝗚',
-    h: '𝗛',
-    i: '𝗜',
-    j: '𝗝',
-    k: '𝗞',
-    l: '𝗟',
-    m: '𝗠',
-    n: '𝗡',
-    o: '𝗢',
-    p: '𝗣',
-    q: '𝗤',
-    r: '𝗥',
-    s: '𝗦',
-    t: '𝗧',
-    u: '𝗨',
-    v: '𝗩',
-    w: '𝗪',
-    x: '𝗫',
-    y: '𝗬',
-    z: '𝗭',
-  };
-
-  return text
-    .toLowerCase()
-    .split('')
-    .map((char) => (fancyMap[char] ? fancyMap[char] : char))
-    .join('');
-}

@@ -9,7 +9,7 @@ module.exports = {
     author: "junjam",
     countdown: 5,
     role: 0,
-    category: "media",
+    category: "utility",
     shortDescription: {
       en: "",
     },

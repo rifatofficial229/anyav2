@@ -6,9 +6,9 @@ const fs = require("fs")
 module.exports = {
     config: {
         name: "ball",
-        aliases: ["ball"],
-        version: "1.0",
-        author: "RIFAT",
+        aliases: ["geda"],
+        version: "1.2",
+        author: "Otineeeeyyyy",
         countDown: 5,
         role: 0,
         shortDescription: "tag a person to kick geda/ball shot",

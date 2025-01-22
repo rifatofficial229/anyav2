@@ -1,19 +1,19 @@
 module.exports = {
-  config: {
-    name: "neymar",
-    aliases: ["njr"],
-    version: "1.0",
-    author: "Otineyyyy your dadddy👾😉",
-    countDown: 5,
-    role: 0,
-    shortDescription: "send you pic of neymar",
-    longDescription: "",
-    category: "football",
-    guide: "{pn}"
-  },
+	config: {
+		name: "neymar",
+		aliases: ["njr"],
+		version: "1.0",
+		author: "Otineyyyy your dadddy👾😉",
+		countDown: 5,
+		role: 0,
+		shortDescription: "send you pic of neymar",
+		longDescription: "",
+		category: "football",
+		guide: "{pn}"
+	},
 
-  onStart: async function ({ message }) {
-   var link = [
+	onStart: async function ({ message }) {
+	 var link = [
      "https://i.imgur.com/arWjsNg.jpg",
 
 "https://i.imgur.com/uJYvMR0.jpg",
@@ -45,7 +45,7 @@ module.exports = {
 "https://i.imgur.com/VRALDic.jpg",
 
 "https://i.imgur.com/Z3qGkZa.jpg",
-
+               
 "https://i.imgur.com/etyPi7B.jpg",
 
 "https://i.imgur.com/tMxLEwl.jpg",

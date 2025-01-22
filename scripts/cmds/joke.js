@@ -1,45 +1,37 @@
 const axios = require('axios');
 
 module.exports = {
-  config: {
-    name: 'joke',
-    version: '1.0',
-    author: 'JV',
-    role: 0,
-    category: 'fun',
-    shortDescription: {
-      en: 'Tells a random joke.'
-    },
-    longDescription: {
-      en: 'Tells a random joke fetched from the JokeAPI.'
-    },
-    guide: {
-      en: '{pn}'
-    }
-  },
-  onStart: async function ({ api, event }) {
-    try {
-      const response = await axios.get('https://official-joke-api.appspot.com/random_joke');
+	config: {
+		name: "joke",
+		version: "1.0",
+		author: "Maher",
+		countDown: 0,
+		role: 0,
+		shortDescription: {
+			vi: "Lấy một câu chuyện cười ngẫu nhiên về châm biếm.",
+			en: "Gets a random pun joke."
+		},
+		longDescription: {
+			vi: "Lấy một câu chuyện cười ngẫu nhiên về châm biếm từ JokeAPI (https://jokeapi.dev/).",
+			en: "Gets a random pun joke from JokeAPI (https://jokeapi.dev/)."
+		},
+		category: "fun",
+		guide: "",
+	},
 
-      if (response.status !== 200 || !response.data || !response.data.setup || !response.data.punchline) {
-        throw new Error('Invalid or missing response from JokeAPI');
-      }
+	onStart: async function ({ message, event }) {
+		try {
+			const jokeResponse = await axios.get('https://v2.jokeapi.dev/joke/pun');
+			const joke = jokeResponse.data;
 
-      const setup = response.data.setup;
-      const punchline = response.data.punchline;
-
-      const message = `Here's a joke for you: \n\n${setup}\n\n${punchline}`;
-
-      const messageID = await api.sendMessage(message, event.threadID);
-
-      if (!messageID) {
-        throw new Error('Failed to send message with joke');
-      }
-
-      console.log(`Sent joke with message ID ${messageID}`);
-    } catch (error) {
-      console.error(`Failed to send joke: ${error.message}`);
-      api.sendMessage('Sorry, something went wrong while trying to tell a joke. Please try again later.', event.threadID);
-    }
-  }
+			if (joke.type === 'single') {
+				message.reply(joke.joke);
+			} else if (joke.type === 'twopart') {
+				message.reply(`${joke.setup}\n\n${joke.delivery}`);
+			}
+		} catch (error) {
+			console.log(error);
+			message.reply("Sorry, I couldn't think of a joke right now.");
+		}
+	}
 };

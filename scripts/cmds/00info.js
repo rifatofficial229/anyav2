@@ -55,7 +55,7 @@ module.exports = {
  🙂彡𝑰𝒏𝒔𝒕𝒂: https://www.instagram.com/mueidmursalinrifat?
  😃彡𝑪𝒂𝒑𝑪𝒖𝒕: mueidmursalinrifat
  🥴彡𝑻𝒊𝒌𝑻𝒐𝒌: https://www.tiktok.com/@mmrifat222?
- 🥲彡𝒀𝒐𝒖𝑻𝒖𝒃𝒆: Nai🙂
+ 😅彡𝒀𝒐𝒖𝑻𝒖𝒃𝒆: master_editz-rifat
 \===============`,
 			attachment: await global.utils.getStreamFromURL(link)
 		});
