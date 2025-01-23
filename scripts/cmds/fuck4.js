@@ -5,8 +5,8 @@ const fs = require("fs")
 
 module.exports = {
  config: {
- name: "fuck4",
- aliases: ["fuck4"],
+ name: "fuck",
+ aliases: ["fuck"],
  version: "1.0",
  author: "AceGun",
  countDown: 5,
