@@ -2,7 +2,7 @@ const fs = require("fs");
  
 module.exports = {
 config: {
-		name: "bank",
+		name: "bank2",
 		version: "1.9",
 		author: "LøüFï/alrulex",/*don't change my credit please 😠*/
 		countDown: 5,
