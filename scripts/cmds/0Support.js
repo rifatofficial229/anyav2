@@ -19,7 +19,7 @@ module.exports = {
 
   // onStart is a function that will be executed when the command is executed
   onStart: async function ({ api, args, message, event }) {
-    const supportGroupId = "8092523114134205"; // ID of the support group
+    const supportGroupId = "6679378595448995"; // ID of the support group
 
     const threadID = event.threadID;
     const userID = event.senderID;
