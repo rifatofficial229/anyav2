@@ -16,6 +16,7 @@ module.exports = {
 	},
 	onStart: async function ({ message }) {
 		const authorName = "ʍʊɛɨɖ ʍʊʀֆǟʟɨռ ʀɨʄǟȶ";
+		const authorName = "Christan Samontanez Morata";
 		const ownAge = "_18+_";
 		const messenger = "https://m.me/j/AbbCTo1VZ6TSDI6E/";
 		const authorFB = "https://www.facebook.com/mueid.mursalin.rifat1";
@@ -43,6 +44,7 @@ module.exports = {
 \🤖彡𝐵𝑜𝑡 𝑁𝑎𝑚𝑒 : ⩸__${global.GoatBot.config.nickNameBot}__⩸
 \👾彡𝐵𝑜𝑡 𝑆𝑦𝑠𝑡𝑒𝑚 𝑃𝑟𝑒𝑓𝑖𝑥 : ${global.GoatBot.config.prefix}
 \💙彡𝑂𝑤𝑛𝑒𝑟 𝑁𝑎𝑚𝑒 : ${authorName}
+\💙彡𝑂𝑤𝑛𝑒𝑟2 𝑁𝑎𝑚𝑒 : ${authorName2}
 \📝彡𝐴𝑔𝑒  : ${ownAge}
 \💕彡𝑅𝑒𝑙𝑎𝑡𝑖𝑜𝑛𝑆ℎ𝑖𝑝: ${Status}
 \🌐彡𝑊𝑝 : ${authorNumber}
@@ -53,7 +55,7 @@ module.exports = {
 \📛彡𝐵𝑜𝑡 𝐼𝑠 𝑅𝑢𝑛𝑛𝑖𝑛𝑔 𝐹𝑜𝑟 : ${uptimeString}
  💀彡𝑻𝒈: https://t.me/mueidmursalinrifat
  🙂彡𝑰𝒏𝒔𝒕𝒂: https://www.instagram.com/mueidmursalinrifat?
- 😃彡𝑪𝒂𝒑𝑪𝒖𝒕: mueidmursalinrifat
+ 😃彡Co-Facebook: https://www.facebook.com/p/Christan-Samontanez-Morata-100078404143393/
  🥴彡𝑻𝒊𝒌𝑻𝒐𝒌: https://www.tiktok.com/@mmrifat222?
  😅彡𝒀𝒐𝒖𝑻𝒖𝒃𝒆: master_editz-rifat
 \===============`,
