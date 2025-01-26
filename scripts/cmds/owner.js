@@ -15,6 +15,6 @@ onChat: async function({
     message,
     getLang
 }) {
-    if (event.body && event.body.toLowerCase() == "owner") return message.reply("Hello! My owner/developer is itz Mueid Mursalin Rifat. this is my owner fb if you want to contact him.    https://www.facebook.com/mueid.mursalin.rifat1  or use /support");
+    if (event.body && event.body.toLowerCase() == "owner") return message.reply("Hello! My owner/developer is itz Mueid Mursalin Rifat Ans Co-Owner is  Christan Samontanez Morata this is my owner fb ~    https://www.facebook.com/mueid.mursalin.rifat1  and this is co-owner Fb id  ~ https://www.facebook.com/p/Christan-Samontanez-Morata-100078404143393/ if any help   use /support");
 }
 };
