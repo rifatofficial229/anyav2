@@ -28,7 +28,7 @@
   "nickNameBot": "ANYA REBUSUKI",
   "prefix": "/",
   "database": {
-    "type": "json",
+    "type": "sqlite",
     "uriMongodb": "mongodb+srv://mmrifat:dbUserpassword@cluster0.ippck.mongodb.net/?retryWrites=true&w=majority",
     "autoSyncWhenStart": false,
     "autoRefreshThreadInfoFirstTime": true,
